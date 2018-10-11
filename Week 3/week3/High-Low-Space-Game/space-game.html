@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            .left {
+                float: left;
+                width: 30%;
+                padding: 20px;
+            }
+            
+            .right {
+                float: left;
+                width: 20%;
+                padding: 20px;
+            }
+        </style>
+        
+        <meta charset="UTF-8">
+        <title>Operator Logic Game</title>        		
+    </head>
+	
+    <body>
+        <div class="left" id="leftbox">
+            <h3 id="chapterTitle">Adventure in Space - Start</h3>
+            
+            <div>
+                <p id="textSpace">Placeholder</p>	                                        
+                
+                <br>
+                
+                <fieldset>
+                    <legend>High/Low Game</legend>
+                    <div id="hiLoGame">
+                        <h4>Current Card:</h4>
+                        <p id="card">N/A</p>
+                        
+                        <p>The next card will be...</p>
+                        <input type="button" onclick="submitGuess('Higher')" value="Higher"> &nbsp <input type="button" onclick="submitGuess('Lower')" value="Lower">
+                                            
+                        <p id="result">You were: </p>                        
+                        <p id="score">You've got 0/0 correct.</p>
+                        <p id="reqToPass">You need 0/0 correct to pass.</p>
+                    </div>
+                    
+                    <div id="endCardGameMessage">
+                        <p id="winOrLose">You've won!</p>
+                        <input type="button" onclick="continueStory(wonGame)" value="Continue Story">
+                    </div>
+                    
+                    <div id="endStoryGameMessage" style="display:none;">
+                        <p>Congratulations on reaching the end of the game. Why not try for one of the other endings?</p>
+                    </div>
+                </fieldset>
+                
+                <br>
+                <input type="button" onclick="location.href='index.html';" value="Return to menu">
+                
+            </div>
+        </div>
+        
+        <div class="right" id="rightbox">
+            <h4>Status Effects</h4>
+            <div id="burn">
+                <b>Burn: None</b>
+            </div>
+            <div id="oxygen">
+                <b>Oxygen: Normal</b>
+            </div>
+            <div id="morale">
+                <b>Morale: Normal</b>
+            </div>   
+
+            <div>
+                <br>
+                <b>Help:</b>
+                
+                <p>During the story of the game there will be points where you are required to perform an action. Whether the action succeeds or not is dependent on how well you do in a game of High/Low.</p>
+                <p>In High/Low you are presented with a card with a number value between 1 and 11. You must guess whether the next card drawn will be <b>Higher</b> or <b>Lower</b> than the previous one.</p>
+                <p>Initially you have to guess 3/5 of the cards correctly to succeed, but this can change as the story progresses.</p>
+                <p>Good Luck!</p>
+                
+                <br>
+                <b>Status Effects:</b>
+                <p>Burn - Currently not implemented.</p>
+                <p>Oxygen - If in low oxygen, the card to guess will receive a -1 if you guess <b>High</b>, or +1 if you guess <b>Low</b>.</p>
+                <p>Morale - Low morale will give you -1 to the total number of guesses. High morale will give you -1 to the number of correct guesses to pass.</p>
+            </div>
+        </div>               
+                
+        <script src="cardGame.js"></script>        
+        <script src="story.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
